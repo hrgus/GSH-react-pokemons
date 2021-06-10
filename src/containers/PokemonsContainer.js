@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import FilterBar from '../components/FilterBar'
 import PokemonCard from '../components/PokemonCard'
+import {
+    Switch,
+    Route,
+  } from "react-router-dom";
+import PokemonForm from '../components/PokemonForm';
+import TeamPokemon from '../components/TeamPokemon'
+
 
 class PokemonsContainer extends Component {
     componentDidMount(){
@@ -25,8 +32,30 @@ class PokemonsContainer extends Component {
         
         return (
             <div id="poke-container">
-                <FilterBar />
-                {pokemons}
+                <Switch>
+                    <Route exact path="/pokemons/new" component={(routeInfo) => {
+                        console.log(routeInfo)
+                    
+                        return <PokemonForm goBack={() => routeInfo.history.push("/pokemons")} />
+                    
+                    }} />
+
+
+
+                    <Route exact path="/pokemons">
+                `       <FilterBar />
+                        {pokemons}
+                    </Route>
+                    <Route path="/pokemons/:id" component={(routeInfo) => {
+                    console.log(routeInfo)
+                    const paramsId = parseInt(routeInfo.match.params.id)
+                    const foundPokemon = this.props.pokemons.find(p => p.id === paramsId)
+                    return <TeamPokemon pokemon={foundPokemon}/>
+                    
+                    } } />
+
+                </Switch>
+
             </div>
     )}
 }
