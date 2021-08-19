@@ -52,7 +52,7 @@ class App extends Component {
 
   // FETCH ON OUR COMPONENT DID MOUNT THAT CONTAINS OUR STATE
   componentDidMount(){
-    fetch("http://localhost:3001/")
+    fetch("https://nameless-forest-13707.herokuapp.com")
       .then(resp => resp.json())
       .then(json => {
         this.setState({
