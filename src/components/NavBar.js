@@ -11,7 +11,7 @@ function NavBar() {
                 <button id="pokemons" >Pokemons</button>
             </Link>
             <Link to="/teams">
-                <img alt="pokeball image" src="https://pngimg.com/uploads/pokeball/pokeball_PNG21.png" />
+                <img alt="pokeball" src="https://pngimg.com/uploads/pokeball/pokeball_PNG21.png" />
             </Link>
             <Link to="/pokemons/new">
                 <button id="teams">PokeForm</button>

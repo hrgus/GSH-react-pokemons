@@ -21,7 +21,7 @@ export default class TeamPokemon extends Component {
                 <p>Name: {this.props.pokemon.name}</p>
                 <p>Type: {this.props.pokemon.poke_type}</p>
     
-                <img onMouseEnter={this.changeImage} onMouseLeave={this.changeImage} src={this.props.pokemon[this.state.image]} />
+                <img alt={this.props.pokemon.name} onMouseEnter={this.changeImage} onMouseLeave={this.changeImage} src={this.props.pokemon[this.state.image]} />
             </div> 
             
         )

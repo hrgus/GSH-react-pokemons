@@ -44,7 +44,7 @@ class TeamContainer extends Component {
     noTeamHtml = () =>(
         <>
             <h1>You have no Pokemon on your team. </h1>
-            <img src="https://media.tenor.com/images/7c355668e41f8cf511fe30c8483379d0/tenor.gif" />
+            <img alt="surprised pikachu" src="https://media.tenor.com/images/7c355668e41f8cf511fe30c8483379d0/tenor.gif" />
         </>)
     
     

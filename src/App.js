@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-import PokemonForm from './components/PokemonForm';
 import PokemonsContainer from './containers/PokemonsContainer';
 import TeamContainer from './containers/TeamContainer';
 import {
