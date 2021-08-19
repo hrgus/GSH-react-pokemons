@@ -1,10 +1,21 @@
 import React from 'react'
+import {
+    Link
+  } from "react-router-dom";
 
-function NavBar({changePage}) {
+
+function NavBar() {
     return (
         <div id="nav-bar">
-            <h1 id="pokemons" onClick={changePage} >Pokemons</h1>
-            <h1 id="teams" onClick={changePage}>View Team</h1>
+            <Link to="/pokemons">
+                <button id="pokemons" >Pokemons</button>
+            </Link>
+            <Link to="/teams">
+                <img alt="pokeball image" src="https://pngimg.com/uploads/pokeball/pokeball_PNG21.png" />
+            </Link>
+            <Link to="/pokemons/new">
+                <button id="teams">PokeForm</button>
+            </Link>
         </div>
     )
 }

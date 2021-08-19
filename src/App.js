@@ -4,6 +4,11 @@ import NavBar from './components/NavBar';
 import PokemonForm from './components/PokemonForm';
 import PokemonsContainer from './containers/PokemonsContainer';
 import TeamContainer from './containers/TeamContainer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 
 // difference functional component* and class component
@@ -12,10 +17,9 @@ import TeamContainer from './containers/TeamContainer';
 
 class App extends Component {
   state = {
-    page: "pokemons",
     pokemons: [],
     team: [],
-    loading: true,
+    signedIn: true,
   }
 
   runAway = () => {
@@ -60,10 +64,30 @@ class App extends Component {
   
   render(){
     return (
+
     <div className="App">
-        <NavBar changePage={this.changePage} />
-        <PokemonForm />
-        {this.state.page === "pokemons" ? <PokemonsContainer team={this.state.team} addPokemon={this.addPokemon} pokemons={this.state.pokemons} /> : <TeamContainer runAway={this.runAway} team={this.state.team} />}
+        <Router>
+
+          {/* If you want navbar to go away change state of signedin */}
+          {this.state.signedIn ? <NavBar /> : false }
+          <Switch>
+
+         
+
+            <Route path="/pokemons" component={() => {
+            const pokemonContainerJSX = <PokemonsContainer team={this.state.team} addPokemon={this.addPokemon} pokemons={this.state.pokemons} /> 
+            return (this.state.pokemons.length > 0 ? pokemonContainerJSX : <h1>Loading....</h1>)
+          }} />
+
+
+
+            <Route exact path="/teams" component={() => <TeamContainer runAway={this.runAway} team={this.state.team} />} />
+            
+            <Route path="/" render={() => <h1>ROUTE DOES NOT EXIST!</h1>} />
+
+
+          </Switch>
+        </Router>
     </div>
   )}
 }

@@ -30,6 +30,9 @@ export default class PokemonForm extends Component {
                         <button>Create a Pokemon</button>
                     </div>
                 </form>
+                <div>
+                    <button onClick={() => this.props.goBack()}>GO BACK</button>
+                </div>
             </div>
         )
     }
