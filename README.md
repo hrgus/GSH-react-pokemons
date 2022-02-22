@@ -1,36 +1,38 @@
-# React-Pokemons
+# Git Scavenger Hunt - React Pokemons
 
-If you are insterested in the backend for this application here is a link to my [rails-server](https://github.com/Ejguzman3988/rails-poke-backend-test)
+## What is Git Scavenger Hunt (GSH)?
 
-## Component Lifecycle Methods
+Git Scavenger Hunt (GSH) is an event hosted every Friday by Flatiron School Online Staff at 11am ET. During this event Flatiron students will pair to work **collaboratively** with other students. At the start of each session the staff will introduce the project that we will be working on, and open it up for students to ask questions. After questions students will be sent into different breakout rooms and begin the hunt for issues to fix.
 
-Each component that you write has multiple 'lifecycle methods'. These methods are methods that we can override to run code at certain times in our components lifecycle. [Here is the react documentation on lifecycle methods.](https://reactjs.org/docs/react-component.html) There are multiple stages of a components lifecycle.
+## Agenda
 
-### Common Lifecycles
+_Timing may vary depending on each session_
 
-- Mounting
-  - constructor()
-  - render()
-  - componentDidMount()
-- Updating
-  - render()
-  - componentDidUpdate()
-- Unmounting
-  - componentWillUnmount()
+- Introducing Project - 5 mins
+- Questions - 5-10 mins
+- Scavenging - breakout rooms open - 30 mins
+- Live Code Review - 15 mins
 
-### Components We will use
+## DEMO
 
-- `Which method will we use to fetch?`
-  - LCM: componentDidMount()
-- `When We add a Pokemon To our Team What method should update our card?`
-  - LCM: componentDidUpdate()
-- `Toggle between all pokemons and our team`
+Video Demo Breaking down what we will do during Git d Scavenger Hunt - [insert link]
 
----
-- `Set An interval to start the timer application and clear it when necessary?`
-  - componentDidMount && componentWillUnmount 
-- `When the image is hovered over it should show second image.`
-- `The filter should keep the same state, and filter through correctly.`
-<br />
-<a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">Presentation and Container components (old Blog)</a>
-<a href="https://reactrouter.com/web/guides/quick-start">REACT ROUTER DOCS</a>
+# Project Overview
+
+This current project has been repurposed from a previous live lecture. React pokemons is an application that pulls data from the [PokeApi](https://pokeapi.co/). The data is stored in a rails backend created specifically for this project. Follow the instructions at this [repository](https://github.com/Ejguzman3988/rails-poke-backend-test) to set up your server. React Pokemons have a few features that have already been coded in. Some work, while others don't. Most if not all of the code is written in javascript class syntax, which means we will have to convert classes over to using functional components.
+
+# Instructions
+
+1. Fork and clone [GSH-React-Pokemons](https://github.com/Ejguzman3988/GSH-react-pokemons)
+1. Follow instructions to set up server. [Poke-Backend](https://github.com/Ejguzman3988/rails-poke-backend-test)
+1. Run the following commands in your terminal.
+   1. > npm install
+   1. > npm start
+
+## What are we looking for?
+
+Github has an issue feature on every repository. If you are the first to locate an issue with a project that issue will be assigned to you. You will then fork and clone the repository and submit the bug fix via a pull request.
+
+## What is a Pull Request?
+
+Pull requests are way to tell other collaborators about changes you have pushed to your branch on GitHub. Opening a pull request allows the staff to review the potential changes to the base branch. This is why it is more than ever important to write meaningful commit messages in order to explain what your code will do once merged into the main branch. Read more [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
