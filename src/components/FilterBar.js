@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 function FilterBar() {
-    return (
-        <div id="filter-bar">
-            <label htmlFor="filter-input">Filter: </label>
-            <input id="filter-input" />
-        </div>
-    )
+  return (
+    <div id="filter-bar">
+      <label htmlFor="filter-input">Filter: </label>
+      <input id="filter-input" />
+    </div>
+  );
 }
 
-export default FilterBar
+export default FilterBar;
