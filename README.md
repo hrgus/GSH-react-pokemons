@@ -15,7 +15,7 @@ _Timing may vary depending on each session_
 
 ## DEMO
 
-Video Demo Breaking down what we will do during Git Scavenger Hunt - [insert link]
+Video Demo Breaking down what we will do during Git Scavenger Hunt - [Demo](https://youtu.be/19sFWGoF2As)
 
 # Project Overview
 
