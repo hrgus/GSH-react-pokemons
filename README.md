@@ -2,7 +2,7 @@
 
 ## What is Git Scavenger Hunt (GSH)?
 
-Git Scavenger Hunt (GSH) is an event hosted every Friday by Flatiron School Online Staff at 11am ET. During this event Flatiron students will pair to work **collaboratively** with other students. At the start of each session the staff will introduce the project that we will be working on, and open it up for students to ask questions. After questions students will be sent into different breakout rooms and begin the hunt for issues to fix.
+Git Scavenger Hunt (GSH) is an event hosted every Friday by Flatiron School Flex Staff at 11am ET. During this event Flatiron students will pair and work **collaboratively**. At the start of each session the staff will introduce the project that we will be contributing to, and open the session up for questions. Next, students will be sent into different breakout rooms and begin the hunt for issues to fix. During the breakout session students are allowed to ask the hosts for help, using the zoom controls. Lastly, the final minutes will be spent doing a live code review, where staff will look at the incoming pull requests and decide whether to merge or suggest changes.
 
 ## Agenda
 
@@ -15,7 +15,7 @@ _Timing may vary depending on each session_
 
 ## DEMO
 
-Video Demo Breaking down what we will do during Git d Scavenger Hunt - [insert link]
+Video Demo Breaking down what we will do during Git Scavenger Hunt - [insert link]
 
 # Project Overview
 
@@ -36,3 +36,11 @@ Github has an issue feature on every repository. If you are the first to locate 
 ## What is a Pull Request?
 
 Pull requests are way to tell other collaborators about changes you have pushed to your branch on GitHub. Opening a pull request allows the staff to review the potential changes to the base branch. This is why it is more than ever important to write meaningful commit messages in order to explain what your code will do once merged into the main branch. Read more [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+
+## How to create an Issue on GitHub?
+
+Navigate to the issue tab and describe your issue. Adding tags will help identify how urgent your issue actually is. It can also help identify what kind of issue it is.
+
+[Documentation On Creating a Github Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue)
+
+[Documentation On Linking a Github Issue to Pull Request](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
