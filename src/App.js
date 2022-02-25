@@ -55,7 +55,8 @@ class App extends Component {
         this.setState({
           pokemons: json,
         });
-      });
+      })
+      .catch((e) => console.log(e));
   }
 
   render() {
