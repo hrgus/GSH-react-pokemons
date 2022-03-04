@@ -33,8 +33,14 @@ class App extends Component {
       (pokemon) => pokemon.id === id
     );
     // set state and add the pokemon into the team
-    if (!!this.state.team.find((pokemon) => pokemon.id === id)) {
+    if (this.state.team.find((pokemon) => pokemon.id === id)) {
       console.log("REMOVE THE POKEMON FROM TEAM");
+      this.setState({
+        ...this.state,
+        team: this.state.team.filter((pokemon) => {
+          return pokemon.id !== id;
+        })
+      });
     } else {
       // console.log("ADD POKEMON TO TEAM")
 
