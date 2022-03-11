@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import PokemonsContainer from "./containers/PokemonsContainer";
@@ -9,101 +9,91 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Access to lifecycle methods only class components have access to them*
 // functional components dont have state, unless we use hooks
 
-class App extends Component {
-  state = {
+const App = () => {
+  const [global, setGlobal] = useState({
     pokemons: [],
     team: [],
     signedIn: true,
-  };
+  });
 
-  runAway = () => {
-    this.setState({
-      team: [],
-    });
-  };
-
-  changePage = (e) => {
-    this.setState({
-      page: e.target.id,
-    });
-  };
-  addPokemon = (id) => {
-    // Find the pokemon that we want add
-    const foundPokemon = this.state.pokemons.find(
-      (pokemon) => pokemon.id === id
-    );
-    // set state and add the pokemon into the team
-    if (this.state.team.find((pokemon) => pokemon.id === id)) {
-      console.log("REMOVE THE POKEMON FROM TEAM");
-      this.setState({
-        ...this.state,
-        team: this.state.team.filter((pokemon) => {
-          return pokemon.id !== id;
-        })
-      });
-    } else {
-      // console.log("ADD POKEMON TO TEAM")
-
-      this.setState(
-        (prevState, prevProps) => ({
-          team: [...prevState.team, foundPokemon],
-        }),
-        () => console.log(this.state)
-      );
-    }
-  };
-
-  // FETCH ON OUR COMPONENT DID MOUNT THAT CONTAINS OUR STATE
-  componentDidMount() {
+  useEffect(() => {
     fetch("http://localhost:3001/pokemons")
       .then((resp) => resp.json())
       .then((json) => {
-        this.setState({
+        setGlobal({
+          ...global,
           pokemons: json,
         });
       })
       .catch((e) => console.log(e));
-  }
+  }, []);
 
-  render() {
-    return (
-      <div className="App">
-        <Router>
-          {/* If you want navbar to go away change state of signedin */}
-          {this.state.signedIn ? <NavBar /> : false}
-          <Switch>
-            <Route
-              path="/pokemons"
-              component={() => {
-                const pokemonContainerJSX = (
-                  <PokemonsContainer
-                    team={this.state.team}
-                    addPokemon={this.addPokemon}
-                    pokemons={this.state.pokemons}
-                  />
-                );
-                return this.state.pokemons.length > 0 ? (
-                  pokemonContainerJSX
-                ) : (
-                  <h1>Loading....</h1>
-                );
-              }}
-            />
+  const runAway = () => {
+    setGlobal({
+      ...global,
+      team: [],
+    });
+  };
 
-            <Route
-              exact
-              path="/teams"
-              component={() => (
-                <TeamContainer runAway={this.runAway} team={this.state.team} />
-              )}
-            />
+  const addPokemon = (id) => {
+    // Find the pokemon that we want add
+    const foundPokemon = global.pokemons.find((pokemon) => pokemon.id === id);
+    // set state and add the pokemon into the team
+    if (global.team.find((pokemon) => pokemon.id === id)) {
+      console.log("REMOVE THE POKEMON FROM TEAM");
+      setGlobal({
+        ...global,
+        team: global.team.filter((pokemon) => {
+          return pokemon.id !== id;
+        }),
+      });
+    } else {
+      // console.log("ADD POKEMON TO TEAM")
 
-            <Route path="/" render={() => <h1>ROUTE DOES NOT EXIST!</h1>} />
-          </Switch>
-        </Router>
-      </div>
-    );
-  }
-}
+      setGlobal((prevGlobal, prevProps) => ({
+        ...prevGlobal,
+        team: [...prevGlobal.team, foundPokemon],
+      }));
+    }
+  };
+
+  return (
+    <div className="App">
+      <Router>
+        {/* If you want navbar to go away change state of signedin */}
+        {global.signedIn ? <NavBar /> : false}
+        <Switch>
+          <Route
+            path="/pokemons"
+            component={() => {
+              const pokemonContainerJSX = (
+                <PokemonsContainer
+                  team={global.team}
+                  addPokemon={addPokemon}
+                  pokemons={global.pokemons}
+                />
+              );
+              return global.pokemons.length > 0 ? (
+                pokemonContainerJSX
+              ) : (
+                <h1>Loading....</h1>
+              );
+            }}
+          />
+
+          <Route
+            exact
+            path="/teams"
+            component={() => (
+              <TeamContainer runAway={runAway} team={global.team} />
+            )}
+          />
+
+          <Route path="/" render={() => <h1>ROUTE DOES NOT EXIST!</h1>} />
+        </Switch>
+      </Router>
+    </div>
+  );
+};
 
 export default App;
