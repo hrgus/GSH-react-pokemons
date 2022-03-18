@@ -44,3 +44,6 @@ Navigate to the issue tab and describe your issue. Adding tags will help identif
 [Documentation On Creating a Github Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue)
 
 [Documentation On Linking a Github Issue to Pull Request](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
+
+## License
+[MIT](https://github.com/ejguzman3988/GSH-react-pokemons/blob/main/License)
